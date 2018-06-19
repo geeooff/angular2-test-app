@@ -1,3 +1,12 @@
 .card {
   margin-top: 1rem;
 }
+.state-a-livrer {
+  color: red;
+}
+.state-en-cours {
+  color: blue;
+}
+.state-livree {
+  color: green;
+}

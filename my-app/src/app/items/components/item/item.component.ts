@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Item } from '../../../shared/interfaces/item';
+import { State } from '../../../shared/enums/state.enum';
 
 @Component({
   selector: 'app-item',
@@ -8,9 +9,14 @@ import { Item } from '../../../shared/interfaces/item';
 })
 export class ItemComponent implements OnInit {
   @Input() item: Item;
+  public state = State;
   constructor() { }
 
   ngOnInit() {
   }
 
+  public changeState(newState: State): void {
+    this.item.state = newState;
+    // TODO appeler service de mise à jour
+  }
 }
