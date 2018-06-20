@@ -8,6 +8,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { StateDirective } from './directives/state.directive';
 import { FormComponent } from './components/form/form.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { SuperPipe } from './pipes/super.pipe';
 
 @NgModule({
   imports: [
@@ -21,13 +22,15 @@ import { FilterPipe } from './pipes/filter.pipe';
     NavComponent,
     FormComponent,
     StateDirective,
-    FilterPipe
+    FilterPipe,
+    SuperPipe
   ],
   exports: [
     NavComponent,
     FormComponent,
     StateDirective,
-    FilterPipe
+    FilterPipe,
+    SuperPipe
   ]
 })
 export class SharedModule { }
