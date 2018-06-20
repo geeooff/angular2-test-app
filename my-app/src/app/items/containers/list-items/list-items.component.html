@@ -1,5 +1,6 @@
 <div class="container">
-  <ng-container *ngFor="let cmd of collection">
+  <input type="text" #search (keyup)="0">
+  <ng-container *ngFor="let cmd of collection | filter:search.value">
     <app-item [item]="cmd"></app-item>
   </ng-container>
 </div>

@@ -7,6 +7,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavComponent } from './components/nav/nav.component';
 import { StateDirective } from './directives/state.directive';
 import { FormComponent } from './components/form/form.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   imports: [
@@ -19,12 +20,14 @@ import { FormComponent } from './components/form/form.component';
   declarations: [
     NavComponent,
     FormComponent,
-    StateDirective
+    StateDirective,
+    FilterPipe
   ],
   exports: [
     NavComponent,
     FormComponent,
-    StateDirective
+    StateDirective,
+    FilterPipe
   ]
 })
 export class SharedModule { }
