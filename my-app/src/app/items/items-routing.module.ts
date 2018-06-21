@@ -5,7 +5,7 @@ import { AddComponent } from './containers/add/add.component';
 import { AddItemComponent } from './containers/add-item/add-item.component';
 
 const appRoutes: Routes = [
-  { path: 'list', component: ListItemsComponent },
+  { path: '', component: ListItemsComponent },
   { path: 'add', component: AddComponent },
   { path: 'add-item', component: AddItemComponent }
 ];

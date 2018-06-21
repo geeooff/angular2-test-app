@@ -11,7 +11,7 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
-import { ItemsModule } from './items/items.module';
+// import { ItemsModule } from './items/items.module';
 import { StateButtonVisibilityDirective } from './shared/directives/state-button-visibility.directive';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -31,7 +31,7 @@ import { AppRoutingModule } from './app-routing.module';
     SharedModule,
     CoreModule,
     HomeModule,
-    ItemsModule,
+    // ItemsModule,
     PageNotFoundModule
   ],
   providers: [],

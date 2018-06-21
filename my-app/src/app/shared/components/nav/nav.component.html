@@ -6,16 +6,16 @@
   <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" routerLink="home" (click)="isCollapsed = true">Home</a>
+        <a class="nav-link" routerLink="/home" (click)="isCollapsed = true">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="list" (click)="isCollapsed = true">List</a>
+        <a class="nav-link" routerLink="/items" (click)="isCollapsed = true">List</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="add" (click)="isCollapsed = true">Add <em class="small">(Template-driven form)</em></a>
+        <a class="nav-link" routerLink="/items/add" (click)="isCollapsed = true">Add <em class="small">(Template-driven form)</em></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="add-item" (click)="isCollapsed = true">Add <em class="small">(Reactive form)</em></a>
+        <a class="nav-link" routerLink="/items/add-item" (click)="isCollapsed = true">Add <em class="small">(Reactive form)</em></a>
       </li>
     </ul>
   </div>
