@@ -21,7 +21,13 @@ export class AddItemComponent implements OnInit {
   }
 
   public add(item: Item): void {
-    this.collectionService.addItem(item);
-    this.router.navigate(['list']);
+    const sub = this.collectionService.addItem(item).subscribe(
+      (data) => {
+        console.log(data);
+        if (data) {
+          this.router.navigate(['list']);
+        }
+      }
+    );
   }
 }

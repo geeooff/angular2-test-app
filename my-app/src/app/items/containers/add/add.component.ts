@@ -23,7 +23,7 @@ export class AddComponent implements OnInit {
 
   private init(): void {
     this.newItem = {
-      id: '',
+      id: null,
       name: '',
       reference: '',
       state: State.ALIVRER
@@ -32,8 +32,14 @@ export class AddComponent implements OnInit {
 
   public process(): void {
     console.log(this.newItem);
-    this.collectionService.addItem(this.newItem);
-    this.init();
-    this.router.navigate(['list']);
+    const sub = this.collectionService.addItem(this.newItem).subscribe(
+      (data) => {
+        console.log(data);
+        if (data) {
+          this.init();
+          this.router.navigate(['list']);
+        }
+      }
+    );
   }
 }
