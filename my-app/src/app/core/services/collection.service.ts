@@ -39,6 +39,9 @@ export class CollectionService {
   /**
    * get item from collection
    */
+  public getItemById(id: number): Observable<Item> {
+    return this.http.get<Item>(`${this.url}/${id}`);
+  }
 
   /**
    * update item in collection

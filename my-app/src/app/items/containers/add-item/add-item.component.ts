@@ -25,7 +25,7 @@ export class AddItemComponent implements OnInit {
       (data) => {
         console.log(data);
         if (data) {
-          this.router.navigate(['list']);
+          this.router.navigate(['/items']);
         }
       }
     );

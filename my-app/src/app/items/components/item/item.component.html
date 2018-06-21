@@ -9,7 +9,10 @@
     <h5 class="card-title">{{ item.name }}</h5>
     <p class="card-text">{{ item.reference }}</p>
     <p class="card-text">Bon de commande n°{{ item.reference | super:item.state }}</p>
-    <button class="btn btn-primary" *ngIf="state.ALIVRER === item.state" (click)="changeState(state.ENCOURS)">{{ state.ENCOURS }}</button>
-    <button class="btn btn-primary" *ngIf="state.ENCOURS === item.state" (click)="changeState(state.LIVREE)">{{ state.LIVREE }}</button>
+    <div class="d-flex justify-content-center">
+      <button class="btn btn-primary" *ngIf="state.ALIVRER === item.state" (click)="changeState(state.ENCOURS)">{{ state.ENCOURS }}</button>
+      <button class="btn btn-primary" *ngIf="state.ENCOURS === item.state" (click)="changeState(state.LIVREE)">{{ state.LIVREE }}</button>
+      <a class="btn btn-secondary" [routerLink]="['/items/edit', item.id]">Modifier</a>
+    </div>
   </div>
 </div>

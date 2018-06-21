@@ -37,7 +37,7 @@ export class AddComponent implements OnInit {
         console.log(data);
         if (data) {
           this.init();
-          this.router.navigate(['list']);
+          this.router.navigate(['/items']);
         }
       }
     );
