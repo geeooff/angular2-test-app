@@ -40,3 +40,6 @@ Thumbs.db
 
 # Angular Environment files
 /src/environments
+
+# CompoDoc
+/documentation
