@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { State } from '../../../shared/enums/state.enum';
 import { Item } from '../../interfaces/item';
 
@@ -11,10 +11,10 @@ import { Item } from '../../interfaces/item';
 export class FormComponent implements OnInit {
   @Input() editItem: Item;
   @Output() newItem = new EventEmitter<Item>();
-  public form: FormGroup;
+  public form: UntypedFormGroup;
   public intitules = Object.values(State);
   constructor(
-    private fb: FormBuilder
+    private fb: UntypedFormBuilder
   ) {
 
   }
