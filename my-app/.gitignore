@@ -43,3 +43,6 @@ Thumbs.db
 
 # CompoDoc
 /documentation
+
+# Angular 13 cache
+.angular/
