@@ -24,7 +24,7 @@ jobs:
           - x64
     defaults:
       run:
-        working-directory: myapp
+        working-directory: my-app
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }} - ${{ matrix.architecture }} on ${{ matrix.os }}
