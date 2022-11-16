@@ -5,6 +5,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
+    "test:ci": "ng test --watch=false --browsers=ChromiumHeadless",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "compodoc": "compodoc -s -p src/tsconfig.app.json"
@@ -46,6 +47,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "^2.0.0",
     "protractor": "~7.0.0",
+    "puppeteer": "^19.2.2",
     "ts-node": "~5.0.1",
     "tslint": "~6.1.0",
     "typescript": "~4.6.4"
