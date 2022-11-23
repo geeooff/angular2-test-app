@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Item } from '../../../shared/interfaces/item';
 import { CollectionService } from '../../../core/services/collection.service';
@@ -8,16 +8,13 @@ import { CollectionService } from '../../../core/services/collection.service';
   templateUrl: './add-item.component.html',
   styleUrls: ['./add-item.component.css']
 })
-export class AddItemComponent implements OnInit {
+export class AddItemComponent {
   public item: Item;
   constructor(
     private router: Router,
     private collectionService: CollectionService
   ) {
 
-  }
-
-  ngOnInit() {
   }
 
   public add(item: Item): void {

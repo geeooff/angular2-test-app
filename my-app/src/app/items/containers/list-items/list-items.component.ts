@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CollectionService } from '../../../core/services/collection.service';
 import { Item } from '../../../shared/interfaces/item';
 import { Observable } from 'rxjs';
@@ -8,10 +8,10 @@ import { Observable } from 'rxjs';
   templateUrl: './list-items.component.html',
   styleUrls: ['./list-items.component.css']
 })
-export class ListItemsComponent implements OnInit, OnDestroy {
-  // public collection: Item[];
+export class ListItemsComponent implements OnInit {
+
   public collection: Observable<Item[]>;
-  // private sub: Subscription;
+
   constructor(
     private collectionService: CollectionService
   ) { }
@@ -24,10 +24,6 @@ export class ListItemsComponent implements OnInit, OnDestroy {
     //   }
     // );
     this.collection = this.collectionService.collection;
-  }
-
-  ngOnDestroy() {
-    // this.sub.unsubscribe();
   }
 
 }

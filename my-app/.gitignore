@@ -38,11 +38,8 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# Angular Environment files
-/src/environments
-
 # CompoDoc
 /documentation
 
-# Angular 13 cache
+# Angular cache
 .angular/

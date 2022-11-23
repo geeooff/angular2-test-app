@@ -1,14 +1,26 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NEVER } from 'rxjs';
+import { CollectionService } from 'src/app/core/services/collection.service';
 
 import { AddItemComponent } from './add-item.component';
 
 describe('AddItemComponent', () => {
   let component: AddItemComponent;
   let fixture: ComponentFixture<AddItemComponent>;
+  let collectionServiceStub: Partial<CollectionService>;
 
   beforeEach(async(() => {
+    collectionServiceStub = {
+      collection: NEVER
+    };
     TestBed.configureTestingModule({
-      declarations: [ AddItemComponent ]
+      declarations: [ AddItemComponent ],
+      providers: [
+        {
+          provide: CollectionService,
+          useValue: collectionServiceStub
+        }
+      ]
     })
     .compileComponents();
   }));
