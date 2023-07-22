@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { Observable, pipe } from 'rxjs';
 import { take, tap } from 'rxjs/operators';
 import { Item } from '../../shared/interfaces/item';
@@ -8,7 +8,7 @@ import { CollectionService } from './collection.service';
 @Injectable({
   providedIn: 'root'
 })
-export class ItemDetailResolverService implements Resolve<Item> {
+export class ItemDetailResolverService  {
 
   constructor(
     private router: Router,
