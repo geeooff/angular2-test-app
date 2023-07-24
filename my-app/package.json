@@ -8,7 +8,7 @@
     "test:ci": "ng test --watch=false --browsers=ChromiumHeadless",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "compodoc": "compodoc -s -p src/tsconfig.app.json",
+    "compodoc": "compodoc -s -p tsconfig.app.json",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
   },
