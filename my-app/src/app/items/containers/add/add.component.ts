@@ -2,28 +2,25 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CollectionService } from '../../../core/services/collection.service';
 import { State } from '../../../shared/enums/state.enum';
-import { Item } from '../../../shared/interfaces/item';
+import { Item, NewItem } from '../../../shared/interfaces/item';
 
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.css']
 })
-export class AddComponent implements OnInit {
+export class AddComponent {
   public intitules = Object.values(State);
-  public newItem: Item;
+  public newItem: NewItem;
   constructor(
     private router: Router,
     private collectionService: CollectionService
-  ) { }
-
-  ngOnInit() {
-    this.init();
+  ) {
+    this.newItem = this.init();
   }
 
-  private init(): void {
-    this.newItem = {
-      id: null,
+  private init(): NewItem {
+    return {
       name: '',
       reference: '',
       state: State.ALIVRER
@@ -36,7 +33,7 @@ export class AddComponent implements OnInit {
       (data) => {
         console.log(data);
         if (data) {
-          this.init();
+          this.newItem = this.init();
           this.router.navigate(['/items']);
         }
       }

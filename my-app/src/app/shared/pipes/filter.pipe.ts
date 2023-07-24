@@ -6,7 +6,10 @@ import { Item } from '../interfaces/item';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(coll: Item[], arg: string): any {
+  transform(coll: Item[] | null, arg: string): Item[] {
+    if (!coll) {
+      return [];
+    }
     const searchTerm = arg.trim().toLowerCase();
     console.log(coll, searchTerm);
     return searchTerm

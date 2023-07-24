@@ -9,7 +9,7 @@ import { CollectionService } from '../../../core/services/collection.service';
   styleUrls: ['./add-item.component.css']
 })
 export class AddItemComponent {
-  public item: Item;
+  public item?: Item;
   constructor(
     private router: Router,
     private collectionService: CollectionService

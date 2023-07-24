@@ -5,13 +5,15 @@ import { State } from '../enums/state.enum';
   selector: '[appState]'
 })
 export class StateDirective implements OnChanges {
-  @Input() appState: State;
-  @HostBinding('class') nomClass: string;
-  constructor() {
-  }
+  @Input() appState?: State;
+  @HostBinding('class') nomClass?: string;
 
   ngOnChanges(): void {
-    this.nomClass = this.formatClass(this.appState);
+    if (this.appState) {
+      this.nomClass = this.formatClass(this.appState);
+    } else {
+      this.nomClass = undefined;
+    }
   }
 
   private removeAccents(etat: string): string {

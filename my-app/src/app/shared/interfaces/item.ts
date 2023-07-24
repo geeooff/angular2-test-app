@@ -6,3 +6,5 @@ export interface Item {
   reference: string;
   state: State;
 }
+
+export declare type NewItem = Omit<Item, 'id'>;

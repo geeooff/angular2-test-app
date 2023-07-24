@@ -9,13 +9,16 @@ import { CollectionService } from '../../../core/services/collection.service';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent  {
-  @Input() item: Item;
+  @Input() item?: Item;
   public state = State;
   constructor(
     private collectionService: CollectionService
   ) { }
 
   public changeState(newState: State): void {
+    if (!this.item) {
+      return;
+    }
     this.item.state = newState;
     this.collectionService.updateItem(this.item).subscribe(
       (data) => {

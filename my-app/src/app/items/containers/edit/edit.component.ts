@@ -9,7 +9,7 @@ import { Item } from '../../../shared/interfaces/item';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
-  public item: Item;
+  public item?: Item;
 
   constructor(
     private router: Router,

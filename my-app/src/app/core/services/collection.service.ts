@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Item } from '../../shared/interfaces/item';
+import { Item, NewItem } from '../../shared/interfaces/item';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class CollectionService {
   constructor(
     private http: HttpClient
   ) {
-    this.collection = this.http.get<Item[]>(this.url);
+    this._collection = this.http.get<Item[]>(this.url);
   }
 
   /**
@@ -32,15 +32,15 @@ export class CollectionService {
   /**
    * add item in collection
    */
-  public addItem(item: Item): Observable<Item> {
+  public addItem(item: NewItem): Observable<Item> {
     return this.http.post<Item>(this.url, item);
   }
 
   /**
    * get item from collection
    */
-  public getItemById(id: number): Observable<Item> {
-    return this.http.get<Item>(`${this.url}/${id}`);
+  public getItemById(id: number): Observable<Item | undefined> {
+    return this.http.get<Item | undefined>(`${this.url}/${id}`);
   }
 
   /**

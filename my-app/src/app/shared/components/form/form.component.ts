@@ -9,23 +9,24 @@ import { Item } from '../../interfaces/item';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  @Input() editItem: Item;
+  @Input() editItem?: Item;
   @Output() newItem = new EventEmitter<Item>();
   public form: UntypedFormGroup;
   public intitules = Object.values(State);
   constructor(
     private fb: UntypedFormBuilder
   ) {
-
+    this.form = this.createForm();
   }
 
   ngOnInit() {
-    console.log(this.editItem);
-    this.createForm();
+    if (this.editItem) {
+      this.form.patchValue(this.editItem);
+    }
   }
 
   private createForm() {
-    this.form = this.fb.group({
+    return this.fb.group({
       name: [
         this.editItem ? this.editItem.name : '',
         Validators.compose([
@@ -45,17 +46,22 @@ export class FormComponent implements OnInit {
   }
 
   public isError(formControlName: string): boolean {
-    return this.form.get(formControlName).touched
-        && this.form.get(formControlName).invalid;
+    const formControl = this.form?.get(formControlName);
+    if (formControl) {
+      return formControl.touched
+          && formControl.invalid;
+    } else {
+      return false;
+    }
   }
 
   private getItem(): Item {
-    const data = this.form.value as Item;
+    const data = this.form?.value as Item;
     if (!this.editItem) {
       return data;
     } else {
       const id = this.editItem.id;
-      return { id, ...data };
+      return Object.assign({}, data, { id });
     }
   }
 
@@ -65,7 +71,7 @@ export class FormComponent implements OnInit {
     this.newItem.emit(data);
     if (!data.id) {
       this.form.reset();
-      this.form.get('state').setValue(State.ALIVRER);
+      this.form.get('state')?.setValue(State.ALIVRER);
     }
   }
 }

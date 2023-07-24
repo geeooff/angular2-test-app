@@ -8,22 +8,12 @@ import { Observable } from 'rxjs';
   templateUrl: './list-items.component.html',
   styleUrls: ['./list-items.component.css']
 })
-export class ListItemsComponent implements OnInit {
-
+export class ListItemsComponent {
   public collection: Observable<Item[]>;
 
   constructor(
     private collectionService: CollectionService
-  ) { }
-
-  ngOnInit() {
-    // this.sub = this.collectionService.collection.subscribe(
-    //   (data) => {
-    //     console.log(data);
-    //     this.collection = data;
-    //   }
-    // );
+  ) {
     this.collection = this.collectionService.collection;
   }
-
 }
