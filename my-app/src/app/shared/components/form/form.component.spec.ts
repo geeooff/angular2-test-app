@@ -11,7 +11,7 @@ describe('FormComponent', () => {
 
   beforeEach(async(() => {
     filterPipeStub = {
-      transform: (value) => value
+      transform: (value) => value ?? []
     };
 
     TestBed.configureTestingModule({

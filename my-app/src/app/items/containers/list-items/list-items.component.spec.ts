@@ -23,7 +23,7 @@ describe('ListItemsComponent', () => {
       collection: NEVER
     };
     filterPipeStub = {
-      transform: (value) => value
+      transform: (value) => value ?? []
     };
 
     TestBed.configureTestingModule({
