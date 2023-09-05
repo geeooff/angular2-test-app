@@ -18,8 +18,9 @@ jobs:
           - ubuntu-latest
           - windows-latest
         node-version:
-          - 16
-          - 18
+          - current
+          - lts/*
+          - lts/-1
         architecture:
           - x64
     defaults:
