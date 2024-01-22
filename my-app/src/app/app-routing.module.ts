@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
+import { Routes, PreloadAllModules, provideRouter, withPreloading, RouterModule } from '@angular/router';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -10,15 +10,14 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(
+  providers: [
+    provideRouter(
       appRoutes,
-      {
-        // enableTracing: true,
-        preloadingStrategy: PreloadAllModules
-      }
+      withPreloading(PreloadAllModules),
     )
   ],
-  exports: [RouterModule]
+  exports: [
+    RouterModule
+  ]
 })
 export class AppRoutingModule { }

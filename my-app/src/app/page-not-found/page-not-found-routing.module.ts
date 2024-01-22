@@ -10,6 +10,8 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forChild(appRoutes)
   ],
-  declarations: []
+  exports: [
+    RouterModule
+  ]
 })
 export class PageNotFoundRoutingModule { }
