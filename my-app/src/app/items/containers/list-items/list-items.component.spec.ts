@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NEVER } from 'rxjs';
 import { CollectionService } from 'src/app/core/services/collection.service';
 import { FilterPipe } from 'src/app/shared/pipes/filter.pipe';
@@ -18,7 +18,7 @@ describe('ListItemsComponent', () => {
   let collectionServiceStub: Partial<CollectionService>;
   let filterPipeStub: Partial<FilterPipe>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     collectionServiceStub = {
       collection: NEVER
     };
@@ -43,7 +43,7 @@ describe('ListItemsComponent', () => {
       ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ListItemsComponent);
