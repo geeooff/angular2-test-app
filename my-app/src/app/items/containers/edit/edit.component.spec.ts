@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NEVER } from 'rxjs';
 import { CollectionService } from 'src/app/core/services/collection.service';
@@ -10,11 +10,11 @@ describe('EditComponent', () => {
   let fixture: ComponentFixture<EditComponent>;
   let collectionServiceStub: Partial<CollectionService>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     collectionServiceStub = {
       collection: NEVER
     };
-    TestBed.configureTestingModule({
+    await TestBed.configureTestingModule({
       imports: [ RouterTestingModule ],
       declarations: [ EditComponent ],
       providers: [
@@ -25,7 +25,7 @@ describe('EditComponent', () => {
       ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(EditComponent);

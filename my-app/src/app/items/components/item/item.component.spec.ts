@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NEVER } from 'rxjs';
 import { CollectionService } from 'src/app/core/services/collection.service';
 import { State } from 'src/app/shared/enums/state.enum';
@@ -17,11 +17,11 @@ describe('ItemComponent', () => {
   let fixture: ComponentFixture<ItemComponent>;
   let collectionServiceStub: Partial<CollectionService>;
 
-  beforeEach(() => {
+  beforeEach(async () => {
     collectionServiceStub = {
       collection: NEVER
     };
-    TestBed.configureTestingModule({
+    await TestBed.configureTestingModule({
       declarations: [
         ItemComponent,
         SuperPipeMock

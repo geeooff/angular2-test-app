@@ -1,7 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FilterPipe } from '../../pipes/filter.pipe';
 
+import { FilterPipe } from '../../pipes/filter.pipe';
 import { FormComponent } from './form.component';
 
 describe('FormComponent', () => {
@@ -9,12 +9,11 @@ describe('FormComponent', () => {
   let fixture: ComponentFixture<FormComponent>;
   let filterPipeStub: Partial<FilterPipe>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     filterPipeStub = {
       transform: (value) => value ?? []
     };
-
-    TestBed.configureTestingModule({
+    await TestBed.configureTestingModule({
       imports: [ FormsModule, ReactiveFormsModule ],
       declarations: [ FormComponent ],
       providers: [
@@ -25,7 +24,7 @@ describe('FormComponent', () => {
       ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(FormComponent);

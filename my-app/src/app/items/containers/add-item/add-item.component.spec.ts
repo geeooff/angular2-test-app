@@ -1,7 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NEVER } from 'rxjs';
-import { CollectionService } from 'src/app/core/services/collection.service';
 
+import { CollectionService } from 'src/app/core/services/collection.service';
 import { AddItemComponent } from './add-item.component';
 
 describe('AddItemComponent', () => {
@@ -9,7 +9,7 @@ describe('AddItemComponent', () => {
   let fixture: ComponentFixture<AddItemComponent>;
   let collectionServiceStub: Partial<CollectionService>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     collectionServiceStub = {
       collection: NEVER
     };
@@ -23,7 +23,7 @@ describe('AddItemComponent', () => {
       ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AddItemComponent);
